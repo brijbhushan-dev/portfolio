@@ -166,12 +166,12 @@ const SCREENSHOT = (u) => `https://s.wordpress.com/mshots/v1/${encodeURIComponen
    ===================================================================== */
 const skills = [
   // item = [label, simpleicons brand slug (or null), fallback icon key from SK_ICONS]
-  { t: "Front-End", ic: "‹›", items: [["HTML5", "html5", "code"], ["CSS3", "css", "palette"], ["JavaScript", "javascript", "code"], ["jQuery", "jquery", "code"], ["AI-Proven Experience", null, "sparkle"], ["React.js", "react", "atom"]] },
+  { t: "Front-End", ic: "‹›", items: [["HTML5", "html5", "code"], ["CSS3", "css", "palette"], ["JavaScript", "javascript", "code"], ["jQuery", "jquery", "code"], ["AI-Powered Experience", null, "sparkle"], ["React.js", "react", "atom"]] },
   { t: "Styling", ic: "#", items: [["Bootstrap 5", "bootstrap", "grid"], ["SCSS", "sass", "palette"], ["Responsive Design", null, "devices"], ["CSS3 Animations", null, "play"], ["CSS3 Grid & Flexbox", null, "grid"]] },
   { t: "Development", ic: "⚙", items: [["Component-Based Architecture", null, "cube"], ["API Integration", null, "plug"], ["Cross-Browser Compatibility", null, "globe"], ["Performance Optimization", null, "gauge"], ["Clean, Maintainable Code", null, "braces"], ["Pixel-Perfect UI", null, "target"]] },
   { t: "CMS & Platforms", ic: "◧", items: [["WordPress", "wordpress", "layers"], ["Laravel Integration", "laravel", "layers"], ["Magento 2", "magento", "bag"], ["HTML5 Email Templates", null, "mail"], ["Admin Dashboards", null, "dash"]] },
   { t: "Tools", ic: "✎", items: [["Git", "git", "branch"], ["GitHub", "github", "branch"], ["VS Code", null, "window"], ["Photoshop", null, "image"], ["Illustrator (basic)", null, "pen"], ["CorelDRAW (basic)", "coreldraw", "pen"]] },
-  { t: "AI & Modern Development", ic: "✦", items: [["AI-assisted coding", null, "terminal"], ["AI-powered design-to-code", null, "wand"], ["AI-assisted debugging", null, "bug"], ["Agentic dev workflows", null, "bot"], ["Modern frontend workflows", null, "refresh"]] }
+  { t: "AI & Modern Development", ic: "✦", items: [["AI-powered coding", null, "terminal"], ["AI-powered design-to-code", null, "wand"], ["AI-powered debugging", null, "bug"], ["Agentic dev workflows", null, "bot"], ["Modern frontend workflows", null, "refresh"]] }
 ];
 
 const SK_ICONS = {
@@ -217,7 +217,7 @@ const I = {
 };
 const services = [
   ["Front-End Development", "Clean, scalable HTML5, CSS3/SCSS and JavaScript — built to be fast and easy to maintain.", I.code],
-  ["AI-Proven Development", "AI-assisted coding, debugging and design-to-code workflows that speed up delivery, with human review on every line.", I.ai],
+  ["AI-Powered Development", "AI-powered coding, debugging and design-to-code workflows that speed up delivery, with human review on every line.", I.ai],
   ["Responsive Website Development", "Layouts that look and feel right on every screen, tested across browsers.", I.devices],
   ["Website UI Implementation", "Figma, XD or PSD designs converted into pixel-perfect, production-ready interfaces.", I.ui],
   ["WordPress Theme Customization", "Custom theme integration and tweaks, optimized for speed and editors.", I.wp],
