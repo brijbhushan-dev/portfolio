@@ -1,300 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Name — Creative Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#07070d; --fg:#f4f2ff; --mut:#8c89a8;
-  --a:#7c5cff; --b:#ff4ecd; --c:#18f2c5; --d:#ffb347;
-  --glass:rgba(255,255,255,.05); --line:rgba(255,255,255,.1);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;overflow-x:hidden;cursor:none}
-a{color:inherit;text-decoration:none;cursor:none}
-button{cursor:none;font:inherit}
-@media (hover:none){body,a,button{cursor:auto}.cursor,.cursor-dot{display:none}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brij Bhushan Pant — Senior Front-End Developer | AI-Assisted Development</title>
+  <meta name="description"
+    content="Brij Bhushan Pant is a Senior Front-End Developer with 13+ years of experience building pixel-perfect, responsive, high-performance interfaces withAI-Assisted Development, HTML5, CSS3, SCSS, JavaScript, React.js, WordPress and Laravel.">
+  <meta name="author" content="Brij Bhushan Pant">
+  <meta name="theme-color" content="#0B1120">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Brij Bhushan Pant — Senior Front-End Developer">
+  <meta property="og:description"
+    content="13+ years crafting responsive, pixel-perfect and performant web experiences. React.js, JavaScript, SCSS, WordPress, Laravel.">
+  <meta property="og:image" content="assets/images/brij-pant.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-/* grain + aurora */
-body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
-.aurora i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;animation:float 18s ease-in-out infinite}
-.aurora i:nth-child(1){width:46vw;height:46vw;background:var(--a);top:-12vw;left:-8vw}
-.aurora i:nth-child(2){width:38vw;height:38vw;background:var(--b);bottom:-10vw;right:-6vw;animation-delay:-6s}
-.aurora i:nth-child(3){width:28vw;height:28vw;background:var(--c);top:40%;left:45%;opacity:.25;animation-delay:-12s}
-@keyframes float{50%{transform:translate(6vw,5vw) scale(1.15)}}
-
-/* cursor */
-.cursor,.cursor-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:200;border-radius:50%;transform:translate(-50%,-50%)}
-.cursor{width:44px;height:44px;border:1.5px solid var(--fg);mix-blend-mode:difference;transition:width .25s,height .25s,background .25s}
-.cursor-dot{width:6px;height:6px;background:var(--c)}
-.cursor.big{width:90px;height:90px;background:#fff}
-.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:150;background:linear-gradient(90deg,var(--a),var(--b),var(--c))}
-
-/* nav */
-nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:90;display:flex;gap:6px;padding:6px;
-  background:rgba(15,15,25,.6);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:99px}
-nav a{padding:9px 20px;border-radius:99px;font-size:.9rem;color:var(--mut);transition:.3s}
-nav a:hover{background:var(--fg);color:var(--bg)}
-
-section{padding:110px 6vw;position:relative}
-
-/* hero */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:140px}
-.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);background:var(--glass);border-radius:99px;font-size:.85rem;color:var(--mut);width:fit-content;margin-bottom:28px}
-.badge b{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);animation:pulse 1.6s infinite}
-@keyframes pulse{50%{transform:scale(1.6);opacity:.5}}
-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3rem,10.5vw,10rem);line-height:.95;letter-spacing:-.04em}
-h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
-h1 .ch{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.9,.2,1) forwards}
-@keyframes up{to{transform:none}}
-h1 .grad{background:linear-gradient(100deg,var(--a),var(--b),var(--d),var(--c));background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 6s linear infinite}
-@keyframes shift{to{background-position:250% 0}}
-.sub{max-width:560px;margin-top:30px;color:var(--mut);font-size:1.15rem;line-height:1.6}
-.sub em{color:var(--fg);font-style:normal;border-bottom:2px solid var(--b)}
-.cta{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
-.btn{position:relative;padding:16px 32px;border-radius:99px;font-weight:500;display:inline-block;transition:transform .2s}
-.btn.p{background:linear-gradient(120deg,var(--a),var(--b));box-shadow:0 10px 40px -10px var(--a)}
-.btn.g{border:1px solid var(--line);background:var(--glass)}
-.orb{position:absolute;right:7vw;top:50%;width:min(34vw,420px);aspect-ratio:1;transform:translateY(-45%);pointer-events:none}
-.orb div{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.2);animation:spin 20s linear infinite}
-.orb div:nth-child(2){inset:12%;animation-duration:14s;animation-direction:reverse;border-color:rgba(124,92,255,.5)}
-.orb div:nth-child(3){inset:26%;animation-duration:9s;border-color:rgba(255,78,205,.6)}
-.orb span{position:absolute;inset:38%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--b) 35%,var(--a) 70%);box-shadow:0 0 80px var(--b);animation:bob 5s ease-in-out infinite}
-.orb div::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:0 0 16px var(--c)}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes bob{50%{transform:translateY(-16px) scale(1.05)}}
-@media(max-width:800px){.orb{opacity:.25;right:-10vw}}
-
-/* marquee */
-.marquee{border-block:1px solid var(--line);overflow:hidden;padding:22px 0;background:rgba(255,255,255,.02);transform:rotate(-1.5deg);margin:20px -3vw}
-.track{display:flex;gap:50px;width:max-content;animation:scroll 28s linear infinite;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,3rem);text-transform:uppercase}
-.track span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--fg)}
-.track i{color:var(--c);font-style:normal}
-@keyframes scroll{to{transform:translateX(-50%)}}
-
-/* section heads */
-.head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:50px}
-h2{font-family:'Syne',sans-serif;font-size:clamp(2.2rem,6vw,5rem);letter-spacing:-.03em;line-height:1}
-h2 small{display:block;font:500 .9rem 'Space Grotesk';color:var(--c);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{background:var(--glass);border:1px solid var(--line);color:var(--mut);padding:10px 20px;border-radius:99px;transition:.3s}
-.filters button.on,.filters button:hover{background:var(--fg);color:var(--bg)}
-
-/* projects grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:28px}
-.card{position:relative;display:block;border-radius:28px;background:var(--glass);border:1px solid var(--line);overflow:hidden;
-  transform-style:preserve-3d;transition:transform .15s ease-out,opacity .6s,filter .4s;opacity:0;translate:0 50px}
-.card.in{opacity:1;translate:0 0;transition:transform .15s ease-out,opacity .8s,translate .8s cubic-bezier(.2,.9,.2,1)}
-.card.hide{display:none}
-.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-  background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),transparent 45%);opacity:0;transition:.3s}
-.card:hover::after{opacity:1}
-.art{height:240px;position:relative;overflow:hidden;background:var(--bg1)}
-.art::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:var(--bg2);filter:blur(40px);top:-20%;right:-10%;transition:transform .8s}
-.card:hover .art::before{transform:scale(1.5) translate(-10%,10%)}
-.art .big{position:absolute;left:24px;bottom:-14px;font-family:'Syne',sans-serif;font-weight:800;font-size:9rem;line-height:1;color:rgba(255,255,255,.18);transition:.6s}
-.card:hover .art .big{transform:translateX(16px) scale(1.05);color:rgba(255,255,255,.35)}
-.art .emoji{position:absolute;right:28px;top:26px;font-size:3.4rem;transition:.5s;filter:drop-shadow(0 10px 20px rgba(0,0,0,.4))}
-.card:hover .art .emoji{transform:rotate(14deg) scale(1.25) translateY(-6px)}
-.info{padding:24px 26px 28px;transform:translateZ(40px)}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.tags span{font-size:.75rem;padding:5px 12px;border:1px solid var(--line);border-radius:99px;color:var(--mut)}
-.info h3{font-family:'Syne',sans-serif;font-size:1.7rem;letter-spacing:-.02em;margin-bottom:8px}
-.info p{color:var(--mut);line-height:1.55;font-size:.95rem}
-.go{position:absolute;right:22px;bottom:24px;width:52px;height:52px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-size:1.4rem;transition:.4s;transform:translateZ(60px)}
-.card:hover .go{transform:translateZ(60px) rotate(-45deg) scale(1.15);background:var(--c)}
-.num{position:absolute;top:18px;left:22px;z-index:2;font-size:.85rem;padding:5px 12px;border-radius:99px;background:rgba(0,0,0,.4);backdrop-filter:blur(8px)}
-
-/* about / stats */
-.about{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
-.about p{font-size:clamp(1.2rem,2.4vw,1.9rem);line-height:1.5}
-.about p span{color:var(--mut)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.stat{padding:28px;border-radius:24px;background:var(--glass);border:1px solid var(--line)}
-.stat b{font-family:'Syne',sans-serif;font-size:3rem;display:block;background:linear-gradient(120deg,var(--c),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat span{color:var(--mut);font-size:.9rem}
-@media(max-width:800px){.about{grid-template-columns:1fr}}
-
-/* contact */
-.contact{text-align:center;padding-bottom:60px}
-.contact h2{font-size:clamp(3rem,12vw,11rem);line-height:.9}
-.contact h2 a{display:inline-block;background:linear-gradient(100deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;transition:letter-spacing .5s}
-.contact h2 a:hover{letter-spacing:.02em}
-.socials{display:flex;justify-content:center;gap:14px;margin:44px 0;flex-wrap:wrap}
-footer{color:var(--mut);font-size:.85rem;margin-top:40px}
-
-.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.9,.2,1)}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 .ch{transform:none}.card,.reveal{opacity:1;translate:none;transform:none}}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="progress" id="progress"></div>
-<div class="cursor" id="cursor"></div><div class="cursor-dot" id="dot"></div>
-<div class="aurora"><i></i><i></i><i></i></div>
+  <div class="page-curtain" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
-<nav>
-  <a href="#home">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
-</nav>
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="container nav-wrap" aria-label="Primary">
+      <a href="#home" class="brand" aria-label="Brij Bhushan Pant — home"><span class="brand-mark"><img
+            src="assets/images/brij-pant.jpg" alt="" width="40" height="40"></span><span class="brand-text">Brij Bhushan
+          <span>Pant</span></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <span class="nav-indicator" aria-hidden="true"></span>
+      </ul>
+      <a href="#contact" class="btn-pill btn-pill--sm btn-hire d-none d-lg-inline-flex"><span class="hire-dot"
+          aria-hidden="true"></span>Hire me</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="navLinks"><span></span><span></span></button>
+    </nav>
+  </header>
 
-<section class="hero" id="home">
-  <div class="badge"><b></b> Available for new projects</div>
-  <h1>
-    <span class="line" data-split>Hi, I'm</span>
-    <span class="line grad" data-split>Your Name.</span>
-    <span class="line" data-split>I build magic.</span>
-  </h1>
-  <p class="sub">Designer &amp; developer crafting <em>delightful digital experiences</em> — from bold brands to buttery-smooth apps.</p>
-  <div class="cta">
-    <a class="btn p magnet" href="#work">See my work ↓</a>
-    <a class="btn g magnet" href="#contact">Let's talk</a>
-  </div>
-  <div class="orb"><div></div><div></div><div></div><span></span></div>
-</section>
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="bg-orb orb-1" data-parallax="0.15"></div>
+      <div class="bg-orb orb-2" data-parallax="-0.1"></div>
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 order-2 order-lg-1">
+            <p class="eyebrow reveal"><span class="dot"></span> Available for new projects</p>
+            <h1 class="hero-title" data-split>Crafting Digital <span class="hl">Experiences</span> That Make an <span
+                class="hl">Impact.</span></h1>
+            <p class="hero-name reveal" style="--d:.5s">Hi, I'm <strong>Brij Bhushan Pant</strong> — <span
+                class="text-lime">Senior Front-End Developer</span>, <span class="hero-role2">AI-Assisted
+                Developer</span></p>
+            <p class="hero-lead reveal" style="--d:.6s">I turn design concepts into pixel-perfect, responsive and
+              maintainable interfaces. With 13+ years of experience, I've shipped websites, dashboards and React
+              interfaces for clients across India, the Middle East and the UK — and I now pair that craft with
+              AI-assisted workflows.</p>
+            <div class="hero-cta reveal" style="--d:.75s">
+              <a href="#projects" class="btn-pill">Explore My Work <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg></a>
+              <a href="assets/Brij-Bhushan-Pant-CV.pdf" class="btn-pill btn-pill--ghost" download>Download Resume <svg
+                  viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" />
+                </svg></a>
+            </div>
+            <div class="hero-foot reveal" style="--d:.9s">
+              <ul class="social" data-social></ul>
+            </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <div class="portrait-stage reveal" style="--d:.3s">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="portrait" data-parallax="0.05">
+                <img src="assets/images/brij-pant.jpg" alt="Portrait of Brij Bhushan Pant, Senior Front-End Developer"
+                  width="900" height="900" fetchpriority="high">
+              </div>
+              <div class="float-chip chip-a"><span class="chip-ic">&lt;/&gt;</span> React.js</div>
+              <div class="float-chip chip-b"><span class="chip-ic">JS</span> JavaScript</div>
+              <div class="float-chip chip-c"><span class="chip-ic">5</span> HTML5</div>
+              <div class="float-chip chip-d"><span class="chip-ic">3</span> CSS3</div>
+              <div class="float-chip chip-e"><span class="chip-ic">AI</span> AI-Assisted</div>
+              <div class="float-chip chip-f"><span class="chip-ic">#</span> SCSS</div>
+              <div class="xp-badge" role="note"><strong><span data-count="13">0</span><sup>+</sup></strong><span>Years
+                  of<br>Experience</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to about section"><span></span></a>
+    </section>
 
-<div class="marquee"><div class="track" id="track"></div></div>
-
-<section id="work">
-  <div class="head reveal">
-    <h2><small>● Selected work</small>Projects that<br>made me proud</h2>
-    <div class="filters" id="filters"></div>
-  </div>
-  <div class="grid" id="grid"></div>
-</section>
-
-<section id="about">
-  <div class="about">
-    <p class="reveal">I turn <span>messy ideas</span> into <span>clean, fast and unforgettable</span> products. Every pixel has a purpose, every interaction has a little <span>spark of joy.</span></p>
-    <div class="stats reveal">
-      <div class="stat"><b data-count="50">0</b><span>Projects shipped</span></div>
-      <div class="stat"><b data-count="5">0</b><span>Years of craft</span></div>
-      <div class="stat"><b data-count="30">0</b><span>Happy clients</span></div>
-      <div class="stat"><b data-count="12">0</b><span>Awards &amp; mentions</span></div>
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><span>CSS3</span><span>SCSS</span><span>JavaScript</span><span>jQuery</span><span>React.js</span><span>Bootstrap</span><span>WordPress</span><span>Laravel</span><span>Magento
+          2</span>
+        <span>HTML5</span><span>CSS3</span><span>SCSS</span><span>JavaScript</span><span>jQuery</span><span>React.js</span><span>Bootstrap</span><span>WordPress</span><span>Laravel</span><span>Magento
+          2</span>
+      </div>
     </div>
-  </div>
-</section>
 
-<section class="contact" id="contact">
-  <div class="reveal">
-    <h2><small style="font-size:.9rem">● Got an idea?</small><a href="mailto:hello@example.com" class="magnet">Let's<br>create.</a></h2>
-    <div class="socials">
-      <a class="btn g magnet" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn g magnet" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn g magnet" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn g magnet" href="https://behance.net/" target="_blank" rel="noopener">Behance</a>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="row g-5 align-items-stretch about-row">
+          <div class="col-lg-5">
+            <div class="about-visual reveal">
+              <div class="about-photo"><img src="assets/images/brij-pant3.jpg"
+                  alt="Brij Bhushan Pant standing on a hillside terrace" loading="lazy" width="1000" height="1034">
+              </div>
+              <figure class="ai-thumb"><img src="assets/images/brij-pant2.jpeg"
+                  alt="Brij Bhushan Pant in front of an AI-themed backdrop" loading="lazy" width="300" height="300">
+                <figcaption>AI-assisted workflows</figcaption>
+              </figure>
+              <div class="code-card glass" aria-hidden="true">
+                <pre><span class="c-k">const</span> brij = {
+  role: <span class="c-s">"Sr. Front-End Dev"</span>,
+  years: <span class="c-s">"13+"</span>,
+  stack: [<span class="c-s">"React"</span>, <span class="c-s">"SCSS"</span>, <span class="c-s">"JS"</span>],
+  loves: <span class="c-s">"pixel-perfect UI"</span>
+};</pre>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="section-tag reveal">01 — About</p>
+            <h2 class="section-title" data-split><span class="hl">13+ years</span> of craft, still obsessed with the
+              details.</h2>
+            <p class="lead-text reveal">I'm a Senior Front-End Developer and UI Engineer based in Faridabad, India.
+              Since 2013 I've been turning creative concepts into fast, responsive, maintainable interfaces — from
+              marketing sites and WordPress themes to admin dashboards, HTML5 emailers, AI-proven development, React
+              applications, front-end development and Laravel front-end integration.</p>
+            <div class="row g-4 mt-1">
+              <div class="col-md-6 reveal">
+                <div class="mini-block">
+                  <h3>My approach</h3>
+                  <p>Start from the design intent, build with reusable components and clean SCSS, then refine until it
+                    matches the mockup at every breakpoint.</p>
+                </div>
+              </div>
+              <div class="col-md-6 reveal" style="--d:.1s">
+                <div class="mini-block">
+                  <h3>What's different</h3>
+                  <p>Experience across Laravel, WordPress, Magento 2 and React means I adapt to whatever stack the
+                    project needs — and communicate clearly with designers and back-end teams.</p>
+                </div>
+              </div>
+              <div class="col-md-6 reveal" style="--d:.2s">
+                <div class="mini-block">
+                  <h3>Quality focus</h3>
+                  <p>Pixel-perfect implementation, semantic markup, essential optimization, and 100% fully responsive
+                    layouts that work in all browsers and on all devices.</p>
+                </div>
+              </div>
+              <div class="col-md-6 reveal" style="--d:.3s">
+                <div class="mini-block">
+                  <h3>Modern workflow</h3>
+                  <p>I use AI-assisted coding, debugging and design-to-code workflows to move faster and explore more
+                    ideas — with human review on every line.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-wrap reveal">
+          <p class="edu-label">Qualifications</p>
+          <ul class="edu-list">
+            <li class="edu-item"><span class="edu-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="m2 9 10-5 10 5-10 5zM6 11.500V16c0 1.500 2.700 3 6 3s6-1.500 6-3v-4.500" />
+                </svg></span><span><strong>Diploma in Multimedia, Web &amp; Graphic Designing</strong><small>Arena
+                  Animation, Faridabad</small></span></li>
+            <li class="edu-item"><span class="edu-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <path d="M12 3 4 6v5c0 4.500 3.200 8.200 8 10 4.800-1.800 8-5.500 8-10V6zM9 12l2 2 4-4" />
+                </svg></span><span><strong>B.Com</strong><small>EIILM University</small></span></li>
+            <li class="edu-item edu-item--plain"><span class="edu-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+                </svg></span><span><strong>Languages</strong><small>English · Hindi</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <p class="section-tag reveal">02 — Experience</p>
+        <h2 class="section-title" data-split>The <span class="hl">journey</span> so far.</h2>
+        <ol class="timeline">
+          <li class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-card glass">
+              <span class="t-date">Oct 2023 — Present</span>
+              <h3>Senior Front-End Developer, <span class="t-sub">AI-Assisted Development</span></h3>
+              <p class="t-co">morismedia Pvt. Ltd · Kolkata, West Bengal (Remote)</p>
+              <ul>
+                <li>Front-end and UI development on Laravel-based sites for clients in India, Qatar and the UAE.</li>
+                <li>Front-end-only work in React.js and JavaScript on internationalnewsexpress.com.</li>
+                <li>Interactive dashboards, charts and animated UI components; AI-assisted development workflows.</li>
+              </ul>
+              <div class="t-tags"><span>HTML5</span><span>Bootstrap</span><span>Emailer
+                  Design</span><span>Laravel</span><span>React.js</span><span>JavaScript</span></div>
+            </div>
+          </li>
+          <li class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-card glass">
+              <span class="t-date">Jul 2014 — Oct 2023</span>
+              <h3>Sr. HTML Web Developer, <span class="t-sub">UI Front-End Developer</span></h3>
+              <p class="t-co">Mind Digital Pvt. Ltd. · New Delhi</p>
+              <ul>
+                <li>Delivered responsive, pixel-perfect websites and WordPress theme customizations for clients in
+                  India, UAE, Bahrain and the UK.</li>
+                <li>Front-end work on Magento 2, admin panels, dashboards and HTML5 email templates.</li>
+                <li>Cross-browser testing, CSS3 animations and website performance optimization.</li>
+                <li>Worked on React.js.</li>
+              </ul>
+              <div class="t-tags"><span>WordPress</span><span>Magento
+                  2</span><span>Bootstrap</span><span>jQuery</span><span>React.js</span></div>
+            </div>
+          </li>
+          <li class="t-item">
+            <span class="t-dot"></span>
+            <div class="t-card glass">
+              <span class="t-date">Mar 2013 — Jul 2014</span>
+              <h3>HTML Developer</h3>
+              <p class="t-co">IMI Creation Pvt. Ltd. · Faridabad</p>
+              <ul>
+                <li>Started my professional career converting designs into HTML5 and CSS3.</li>
+              </ul>
+              <div class="t-tags"><span>HTML5</span><span>CSS3</span></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="section-tag reveal">03 — Skills &amp; Technologies</p>
+        <h2 class="section-title" data-split>The <span class="hl">toolkit</span> behind the pixels.</h2>
+        <div class="row g-4" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+          <div>
+            <p class="section-tag reveal">04 — Featured Work</p>
+            <h2 class="section-title mb-0" data-split>Selected <span class="hl">websites &amp; interfaces</span>.</h2>
+          </div>
+          <div class="filters reveal" id="projectFilters" role="group" aria-label="Filter projects"></div>
+        </div>
+        <div class="row g-4 mt-3" id="projectGrid" aria-live="polite"></div>
+        <p class="note reveal">Selected live projects. Previews are screenshots of each website — click any card to
+          visit the site.</p>
+        <div class="work-callout reveal" role="note">
+          <span class="work-callout-ic" aria-hidden="true"><svg viewBox="0 0 24 24">
+              <path d="M12 3 4 6v5c0 4.500 3.200 8.200 8 10 4.800-1.800 8-5.500 8-10V6zM9 12l2 2 4-4" />
+            </svg></span>
+          <p>In <strong>13+ years</strong> I have worked on <strong>200+ projects</strong>, many of them live. Due to
+            company policy I can't show most of them here, so these are the ones I'm able to share.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <p class="section-tag reveal">05 — Services</p>
+        <h2 class="section-title" data-split>How I can <span class="hl">help</span> your team.</h2>
+        <div class="row g-4" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" class="section section-alt">
+      <div class="container">
+        <p class="section-tag reveal">06 — Highlights</p>
+        <h2 class="section-title" data-split><span class="hl">Experience</span> in numbers.</h2>
+        <div class="row g-4 stats">
+          <div class="col-6 col-lg-3 reveal">
+            <div class="stat"><strong class="num"><span class="n" data-count="13">0</span><sup>+</sup></strong>
+              <p>Years of front-end experience</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--d:.1s">
+            <div class="stat"><strong class="num"><span class="n" data-count="200">0</span><sup>+</sup></strong>
+              <p>Total projects in my career</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--d:.2s">
+            <div class="stat"><strong class="num"><span class="n" data-count="5">0</span><sup>+</sup></strong>
+              <p>Platforms: WordPress, Magento 2, HTML5, Laravel, React</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--d:.3s">
+            <div class="stat"><strong class="num"><span class="n" data-count="5">0</span><sup>+</sup></strong>
+              <p>Countries served: India, UAE, Qatar, Bahrain, Saudi Arabia, UK</p>
+            </div>
+          </div>
+        </div>
+        <ul class="strengths reveal">
+          <li>Pixel-perfect UI implementation</li>
+          <li>Responsive &amp; cross-browser</li>
+          <li>Reusable React components</li>
+          <li>Dashboards, charts &amp; animations</li>
+          <li>Clean, maintainable code</li>
+          <li>AI-assisted development</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="bg-orb orb-3"></div>
+      <div class="container">
+        <p class="section-tag reveal">07 — Contact</p>
+        <h2 class="contact-title" data-split>Have a <span class="hl">Project</span> in Mind? Let's <span
+            class="hl">Build</span> Something Amazing.</h2>
+        <p class="lead-text contact-lead reveal">Whether it's a new build, a redesign or a React interface — reach out
+          on LinkedIn, email or phone and I'll get back to you.</p>
+        <ul class="contact-list reveal" data-contact></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Brij Bhushan Pant. All rights reserved.</p>
+      <ul class="social social--footer" data-social aria-label="Social links"></ul>
     </div>
-    <footer>© 2026 Your Name · Made with ♥ and too much chai</footer>
-  </div>
-</section>
+  </footer>
 
-<script>
-/* ============ ✏️ APNE PROJECTS YAHAN EDIT / ADD KARO ============
-   Bas ek naya {...} block copy-paste karo, baaki sab apne aap ban jaayega.
-   link  -> click karne par jahan jaana hai (apna URL daalo)
-   c1/c2 -> card ke colors, emoji -> card ka icon                      */
-const projects = [
-  { title:"Neon Commerce",  cat:"Web App",  tags:["React","Stripe","UI/UX"],       emoji:"🛍️", c1:"#2a1466", c2:"#ff4ecd",
-    desc:"A futuristic online store with 3D product previews and 1-click checkout.", link:"https://example.com/neon-commerce" },
-  { title:"Wanderlust",     cat:"Mobile",   tags:["Flutter","Maps","Travel"],      emoji:"🧭", c1:"#06383a", c2:"#18f2c5",
-    desc:"Trip planner that builds your whole itinerary with a single tap.",          link:"https://example.com/wanderlust" },
-  { title:"Pulse Dashboard",cat:"Web App",  tags:["Next.js","D3","Analytics"],     emoji:"📈", c1:"#1b1d4f", c2:"#7c5cff",
-    desc:"Real-time analytics dashboard that makes data feel alive.",                 link:"https://example.com/pulse" },
-  { title:"Aurora Brand",   cat:"Branding", tags:["Logo","Identity","Figma"],      emoji:"🎨", c1:"#4a2200", c2:"#ffb347",
-    desc:"Complete brand identity for a skincare startup — logo to packaging.",       link:"https://example.com/aurora" },
-  { title:"Chai Café",      cat:"Branding", tags:["Website","Menu","Motion"],      emoji:"☕", c1:"#3b1030", c2:"#ff6b6b",
-    desc:"Warm, playful website and digital menu for a local café chain.",            link:"https://example.com/chai-cafe" },
-  { title:"Orbit AI",       cat:"Mobile",   tags:["AI","Swift","Voice"],           emoji:"🪐", c1:"#0b2a4f", c2:"#38b6ff",
-    desc:"Voice-first AI companion app with delightful micro-interactions.",          link:"https://example.com/orbit-ai" },
-];
-const skills = ["Web Design","Branding","Motion","React","UI / UX","Mobile Apps","3D","Illustration"];
+  <a class="wa-float" id="waFloat" href="#contact" target="_blank" rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"><span class="wa-label">WhatsApp</span><span class="wa-ic"><svg viewBox="0 0 24 24"
+        aria-hidden="true"></svg></span></a>
 
-/* ---------- build ---------- */
-const $ = s => document.querySelector(s);
-const grid = $('#grid'), filters = $('#filters');
+  <a href="#home" class="to-top" id="toTop" aria-label="Bottom to Top" data-tip="Bottom to Top"><svg viewBox="0 0 24 24"
+      aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg><svg class="to-top-ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="22" />
+    </svg></a>
 
-projects.forEach((p,i)=>{
-  const a = document.createElement('a');
-  a.className = 'card'; a.href = p.link; a.target = '_blank'; a.rel = 'noopener'; a.dataset.cat = p.cat;
-  a.style.setProperty('--bg1',p.c1); a.style.setProperty('--bg2',p.c2);
-  a.innerHTML = `
-    <div class="art"><span class="num">${String(i+1).padStart(2,'0')} / ${p.cat}</span>
-      <span class="emoji">${p.emoji}</span><span class="big">${p.title[0]}</span></div>
-    <div class="info">
-      <div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
-      <h3>${p.title}</h3><p>${p.desc}</p>
-    </div><div class="go">→</div>`;
-  grid.appendChild(a);
-});
-
-['All',...new Set(projects.map(p=>p.cat))].forEach((c,i)=>{
-  const b = document.createElement('button'); b.textContent = c; if(!i) b.classList.add('on');
-  b.onclick = ()=>{
-    filters.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
-    document.querySelectorAll('.card').forEach(card=>{
-      card.classList.toggle('hide', c!=='All' && card.dataset.cat!==c);
-    });
-  };
-  filters.appendChild(b);
-});
-
-$('#track').innerHTML = [...skills,...skills].map(s=>`<span>${s}</span><i>✦</i>`).join('');
-
-/* hero letter-by-letter */
-document.querySelectorAll('[data-split]').forEach((el,li)=>{
-  const t = el.textContent; el.textContent = '';
-  [...t].forEach((c,i)=>{
-    const s = document.createElement('span'); s.className='ch'; s.textContent = c===' '?' ':c;
-    s.style.animationDelay = (li*0.25 + i*0.04)+'s'; el.appendChild(s);
-  });
-});
-
-/* ---------- interactions ---------- */
-// custom cursor
-const cur=$('#cursor'), dot=$('#dot'); let cx=0,cy=0,tx=0,ty=0;
-addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;dot.style.left=tx+'px';dot.style.top=ty+'px'});
-(function loop(){cx+=(tx-cx)*.15;cy+=(ty-cy)*.15;cur.style.left=cx+'px';cur.style.top=cy+'px';requestAnimationFrame(loop)})();
-document.addEventListener('mouseover',e=>{cur.classList.toggle('big',!!e.target.closest('.card'))});
-
-// 3D tilt + spotlight on cards
-grid.addEventListener('mousemove',e=>{
-  const card=e.target.closest('.card'); if(!card) return;
-  const r=card.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
-  card.style.setProperty('--mx',x+'px'); card.style.setProperty('--my',y+'px');
-  card.style.transform=`perspective(900px) rotateY(${(x/r.width-.5)*14}deg) rotateX(${(.5-y/r.height)*14}deg) scale(1.02)`;
-});
-grid.addEventListener('mouseout',e=>{const c=e.target.closest('.card'); if(c) c.style.transform=''});
-
-// magnetic buttons
-document.querySelectorAll('.magnet').forEach(m=>{
-  m.addEventListener('mousemove',e=>{const r=m.getBoundingClientRect();
-    m.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
-  m.addEventListener('mouseleave',()=>m.style.transform='');
-});
-
-// scroll progress
-addEventListener('scroll',()=>{
-  $('#progress').style.width = scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%';
-});
-
-// reveal + counters
-const io = new IntersectionObserver(es=>es.forEach(en=>{
-  if(!en.isIntersecting) return;
-  const el=en.target;
-  if(el.classList.contains('card')) el.style.transitionDelay=(([...grid.children].indexOf(el))%3*.12)+'s';
-  el.classList.add('in');
-  el.querySelectorAll('[data-count]').forEach(n=>{
-    const end=+n.dataset.count; let v=0;
-    const t=setInterval(()=>{v+=Math.ceil(end/40);if(v>=end){v=end;clearInterval(t)}n.textContent=v+'+'},35);
-  });
-  io.unobserve(el);
-}),{threshold:.15});
-document.querySelectorAll('.reveal,.card').forEach(el=>io.observe(el));
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
+
 </html>
