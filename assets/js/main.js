@@ -5,7 +5,7 @@ const SITE = {
   email: "brijpant88@gmail.com",
   phone: "+919711101482",          // used for the tel: link and WhatsApp (wa.me needs digits only)
   phoneDisplay: "+91 97111 01482",
-  linkedin: "https://www.linkedin.com/in/brij-pant-ba8000a4/",
+  linkedin: "https://www.linkedin.com/in/brij-bhushan-pant-ba8000a4/",
   github: "" // e.g. "https://github.com/your-username" — hidden until set (not in resume)
 };
 
