@@ -633,3 +633,4 @@ img,svg,video{max-width:100%}
 @media(max-width:991px){.ai-card{grid-template-columns:1fr}.ai-shot{min-height:0;aspect-ratio:16/10}.ai-shot::after{background:linear-gradient(180deg,transparent 60%,rgba(21,31,50,.95))}.ai-steps{grid-template-columns:1fr}.ai-built{margin-top:48px}}
 @media(max-width:575px){.ai-body{padding:22px 18px}}
 @media(prefers-reduced-motion:reduce){.ai-badge i{animation:none}.ai-card,.ai-shot img{transition:none}}
+.ai-card + .ai-card{margin-top:28px}
